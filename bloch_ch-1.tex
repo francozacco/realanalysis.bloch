@@ -1,0 +1,780 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{adjustbox}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[mathscr]{euscript}
+
+\title{\textbf{Solved selected problems of Real Numbers and Real Analysis - Bloch}}
+\author{Franco Zacco}
+\date{}
+
+\addtolength{\topmargin}{-3cm}
+\addtolength{\textheight}{3cm}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\theoremstyle{definition}
+\newtheorem*{solution*}{Solution}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{Chapter 1 - Construction of the Real Numbers}
+
+	\begin{proof}{\textbf{1.2.1}}
+        To prove the uniqueness of $\cdot:\N\times\N \rightarrow \N$, we
+        suppose that there are two operations $\cdot$ and $\odot$ on $\N$ that
+        satisfy the two properties of the theorem. Let
+        $$G = \{x\in\N~|~n\cdot x = n \odot x\text{ for all }n \in\N \}$$
+        we want to prove that $G = \N$, which will imply that $\cdot$ and $\odot$
+        are the same operation. It is clear that $G \subseteq \N$. By part (a)
+        applied to each of $\cdot$ and $\odot$ we see that
+        $n\cdot 1 = n = n \odot 1$ for all $n \in \N$ and then $1 \in G$.
+        
+        Now let $q \in G$ so $n \cdot q = n \odot q$ and then from part (b) we
+        have that $n \cdot s(q) = (n\cdot q) + n = (n\odot q) + n = n\odot s(q)$
+        hence $s(q) \in G$.
+
+        Finally, we use part (c) of Peano Postulates to conclude that $G = \N$
+    \end{proof}
+	\begin{proof}{\textbf{1.2.2}}
+        \begin{itemize}
+        \item [(2)] Let 
+        $$G = \{c \in \N ~|~ (a+b)+c=a+(b+c) \text{ for all }a,b\in\N\}$$
+        We will show that $G = \N$ which will imply the desired result. Clearly
+        $G\subseteq\N$. To show that $1 \in G$, let $j, k \in \N$ so
+        $(j+k)+1=s(j+k)=j+s(k)=j+(k+1)$ then $1 \in G$, where we used from
+        Theorem 1.2.5 that $s(n+m) = n + s(m)$.
+
+        Now let $r \in G$. Let $j,k \in G$ and suppose $(j+k)+s(r) = j + (k+s(r))$
+        by Theorem 1.2.5 we know that $(j+k)+s(r)=s((j+k)+r)$ and since
+        $r \in G$ then $s((j+k)+r)=s(j+(k+r))$ then $s(j+(k+r))=j+s(k+r)=j+(k+s(r))$
+        therefore $s(r) \in G$ and $G =\N$.
+        \item [(3)] Let
+        $$H = \{a \in\N ~|~ a+1=1+a=s(a)\}$$
+        We will show that $H = \N$ which will imply the desired result. Clearly
+        $H\subseteq\N$. If $a=1$ replacing we have that $1+1=1+1=s(1)$ then
+        $1\in H$.
+        
+        Now let $r \in H$ and suppose $s(r)+1=1+s(r)$ then
+        \begin{align*}
+            s(r)+1 &= (r+1)+1 &\text{because part (a) of Theorem 1.2.5}\\
+                &= (1+r)+1 &\text{because } r \in H \\
+                &= 1+(r+1) &\text{because } a+(b+c) = (a+b)+c \\
+                &= 1+s(r) &\text{because part (a) of Theorem 1.2.5}
+        \end{align*}
+        Therefore $H = \N$.
+        \item [(4)] Let
+        $$G = \{a\in\N ~|~ a+b=b+a \text{ for all }b\in\N\}$$
+        We will show that $G = \N$ which will imply the desired result. It is
+        clear that $G\subseteq\N$. To show that $1 \in G$, let $j\in \N$ so
+        $1+j=j+1$ because we proved that in part (3) then $1 \in G$.
+
+        Now let $r\in G$ and suppose that $j +s(r) = s(r)+j$ then
+        \begin{align*}
+            j + s(r) &= s(j+r) &\text{because part (b) of Theorem 1.2.5} \\
+                &= s(r+j) &\text{because }r\in G \\
+                &= r + s(j) &\text{because part (b) of Theorem 1.2.5} \\
+                &= r + (j + 1) &\text{because part (a) of Theorem 1.2.5} \\
+                &= r + (1 + j) &\text{because part (3)} \\
+                &= (r + 1) + j &\text{because associative law for addition} \\
+                &= s(r) + j &\text{because part (a) of Theorem 1.2.5}
+        \end{align*}
+        Therefore $G = \N$.
+        \item [(7)] Let
+        $$G = \{a \in N ~|~ 1\cdot a = a \cdot 1 = a\}$$
+        We will show that $G = \N$ which will imply the desired result. It is
+        clear that $G\subseteq\N$. If $a=1$ replacing we have that
+        $1\cdot 1 = 1\cdot 1 = 1$ because of part (a) in Theorem 1.2.6 then
+        $1 \in G$.
+
+        Now let $r \in G$ and suppose $s(r)\cdot 1 = 1 \cdot s(r) = s(r)$ then
+        \begin{align*}
+            s(r) \cdot 1 &= s(r) &\text{because part(a) of Theorem 1.2.6}\\
+                &= r + 1 &\text{because part(a) of Theorem 1.2.5}\\
+                &= (r \cdot 1) + 1 &\text{because }r \in G\\
+                &= (1 \cdot r) + 1  &\text{because }r \in G\\
+                &= 1 \cdot s(r) &\text{because part (b) of Theorem 1.2.6}
+        \end{align*}
+        Therefore $G = \N$.
+\cleardoublepage
+        \item [(8)] Let
+        $$H = \{c \in \N ~|~ (a+b)c=ac+bc \text{ for all }a,b \in \N\}$$
+        We want to show that $H = \N$ which will imply the desired result. It 
+        is clear that $H\subseteq\N$. To show that $1 \in H$ let $j,k \in \N$
+        then $(j+k)\cdot 1 = j+k = j\cdot 1 +k \cdot 1$ because what we proved
+        in part (7), then $1 \in H$.
+
+        Now let $r \in H$, let $j,k \in \N$ and suppose
+        $(j+k)\cdot s(r) = j\cdot s(r) + k\cdot s(r)$ then
+        \begin{align*}
+            (j+k)\cdot s(r) &= ((j+k)\cdot r) + (j+k) &\text{because part (b) of Theorem 1.2.6}\\
+                &= (j\cdot r + k \cdot r) + (j+k) &\text{because }r \in H\\
+                &= (j\cdot r + j) + (k\cdot r + k) &\text{because Commutative and Associative law} \\
+                &= j\cdot s(r) + k \cdot s(r) &\text{because part (b) of Theorem 1.2.6}
+        \end{align*}
+        Therefore $s(r) \in H$ and $H = \N$.
+        \end{itemize}
+        \item [(9)] Let
+        $$H = \{a \in \N ~|~ ab=ba \text{ for all }b \in \N\}$$
+        We want to show that $H = \N$ which will imply the desired result. It 
+        is clear that $H\subseteq\N$. Also $1 \in H$ because what we proved in
+        part (7).
+
+        Now let $r \in H$, let $k \in \N$ and suppose $s(r)\cdot k = k \cdot s(r)$
+        then
+        \begin{align*}
+            s(r) \cdot k &= (r+1) \cdot k & \text{because part (a) of Theorem 1.2.5} \\
+                &= r\cdot k + 1\cdot k & \text{because Distributive law} \\
+                &= k\cdot r + k & \text{because }r \in H \\
+                &= k \cdot s(r) & \text{because part (b) of Theorem 1.2.6}
+        \end{align*}
+        Therefore $s(r) \in H$ and $H = \N$.
+        \item [(10)] Let
+        $$H = \{c \in \N ~|~ c(a+b)=ca+cb \text{ for all }a,b \in \N\}$$
+        We want to show that $H = \N$ which will imply the desired result. It 
+        is clear that $H\subseteq\N$. Let $j,k \in \N$, if $c=1$ then
+        $1\cdot(j+k) = j+k = 1\cdot j + 1\cdot k$ so $1 \in H$.
+
+        Now let $r \in H$ and lets suppose that
+        $s(r)\cdot(j+k)=s(r)\cdot j + s(r) \cdot k$ then
+        \begin{align*}
+            s(r)\cdot(j+k) &= (j+k)\cdot s(r) & \text{because part (9)}\\
+                &= j\cdot s(r) + k\cdot s(r) & \text{because right-hand side Distributive law}\\
+                &= s(r) \cdot j + s(r) \cdot k & \text{because part (9)}
+        \end{align*}
+        Therefore $s(r) \in H$ and $H = \N$.
+\cleardoublepage
+        \item [(11)] Let
+        $$H = \{c \in \N ~|~ (ab)c=a(bc) \text{ for all }a,b \in \N\}$$
+        We want to show that $H = \N$ which will imply the desired result. It 
+        is clear that $H\subseteq\N$. Let $j,k \in \N$, if $c = 1$ then
+        $(j\cdot k)\cdot 1 = j\cdot k = j\cdot (k) = j\cdot (k\cdot 1)$ then $1 \in H$.
+        
+        Now let $r \in H$ and suppose $(j\cdot k)\cdot s(r) = j\cdot(k\cdot s(r))$
+        then
+        \begin{align*}
+            (j \cdot k) \cdot s(r) &= ((j \cdot k) \cdot r ) + (j \cdot k) & \text{because part (b) of Theorem 1.2.6}\\
+                &= (j \cdot (k \cdot r)) + (j \cdot k) & \text{because }r \in H \\
+                &= j \cdot ((k\cdot r) + k) & \text{because Distributive law} \\
+                &= j \cdot (k \cdot s(r)) & \text{because part (b) of Theorem 1.2.6}
+        \end{align*}
+        Therefore $s(r) \in H$ and $H = \N$.
+        \item [(13)] Let $ab=1$ there are a set of cases that we should check
+        \begin{itemize}
+            \item if $a = 1$ and $b \neq 1$ then $1 \cdot b = b$ but we said
+            that $ab = 1$ then $b$ must be equal to 1 which is a contradiction.
+            \item if $a \neq 1$ and $b = 1$ then $a \cdot 1 = a$ but we said
+            that $ab = 1$ then $a$ must be equal to 1 which is a contradiction.
+            \item if $a \neq 1$ and $b \neq 1$ then because of Lemma 1.2.3
+            there is a unique $t \in \N$ such that $b= s(t)$ so 
+            $a \cdot b = a \cdot s(t) = a \cdot t + a = 1$ and because of part
+            (5) this can't be true.
+        \end{itemize}        
+        Now let $a=b=1$ then $a\cdot b=1 \cdot 1 = 1$ which is what we wanted.
+    \end{proof}
+	\begin{proof}{\textbf{1.2.3}} Let $p_1, p_2 \in\N$ where $p_1 \neq p_2$
+        such that $a +p_1 = b$ and $a + p_2 = b$ then $a + p_1 = a + p_2$ and
+        because of the Cancellation law we have that $p_1 = p_2$ which is a
+        contradiction. Therefore there is a unique $p \in \N$ such that
+        $a + p = b$. 
+    \end{proof}
+	\begin{proof}{\textbf{1.2.4}}
+        \begin{itemize}
+        \item [(1)] Since $a = a$ then by definition of the operation $\leq$
+        is clear that $a \leq a$.
+
+        Now let $a < a$ then there is a $p\in\N$ such that $a = a + p$ but
+        this is not possible because of part (6) of Theorem 1.2.7 then it's
+        a contradiction and therefore $a \nless a$.
+
+        Let $b = a + 1$ then if $a < b$ there is a $p \in \N$ such that
+        $b = a + p$ but then $a + 1 = a + p$ and then $p = 1$, so we found
+        $p = 1$ for which $a < b = a + 1$.
+\cleardoublepage
+        \item [(3)] If $a < b$ and $b < c$ then there is a $p \in \N$ and a
+        $q \in \N$ such that $b = a + p$ and $c = b + q$ so replacing variable
+        $b$ we have that $c = (a + p) + q = a + (p + q)$ now naming $k = p + q$
+        we have $c = a + k$ and then by definition $a < c$.
+        
+        If $a \leq b$ and $b <c$ then either $a < b$ or $a = b$, the first case
+        was already proven so we focus on the second one. We also have that
+        $b < c$ then by definition there is a $p \in \N$ such that $c = b + p$
+        but $a = b$ then replacing $c = a + p$ and by definition $a<c$.
+
+        If now, $a < b$ and $b \leq c$ we have that either $b < c$ or $b = c$
+        the first case was already proven so we focus on the second one.
+        Given that $a < b$ there is a $p \in \N$ such that $b = a +p$ but if
+        $b = c$ then $c = a + p$ which by definition says that $a < c$.
+
+        Finally, if $a \leq b$ and $b \leq c$ then either $a<b$ or $a=b$ and
+        $b<c$ or $b =c$, the last combination we have to prove is the case
+        where $a=b$ and $b=c$ then $a=b=c$ so it's clear that $a \leq c$.
+        \item [(4)] Let $a < b$ then by definition there is a $p \in \N$ such
+        that $b = a + p$ then $b + c = (a + p) + c$ because of part (1) of
+        Theorem 1.2.7, and by the Commutative and Associative law we have that
+        $b + c = (a + c) + p$ which by definition says that $a + c < b + c$.
+
+        If $a + c < b +c$ then by definition there is a $p \in \N$ such that
+        $b + c = (a + c) + p$ and by the Commutative and Associative law we
+        have that $b + c = (a + p) + c$ and because of part (1) of Theorem
+        1.2.7 we have that $b = a + p$ which by definition says that $a < b$.
+        \item [(5)] Let $a<b$ then by definition there is a $p \in \N$ such
+        that $b = a + p$ and because of part (12) of Theorem 1.2.7 we have that
+        $bc = (a+p)c = ac + pc$ where we also applied the Distributive law
+        now naming $k = pc$ we have that $bc = ac + k$ which by definition
+        means that $ac < bc$.
+
+        Let $ac < bc$ and suppose $a\nless b$ then by the Trichotomy law either
+        $a>b$ or $a=b$. If $a>b$ then because what we proved $ac>bc$ which is
+        a contradiction to $ac < bc$. If $a = b$ then $ac = bc$ because of part
+        (12) of Theorem 1.2.7. and it's another contradiction to the fact that
+        $ac < bc$. Then must happen that $a<b$.
+        \item [(11)] Let $a < b$ and suppose $b < a+1$ then $a < b < a + 1$ but
+        this cannot happen because of part (9) so it must happen because of the
+        Trichotomy law that $a + 1 \leq b$.
+
+        Now let $a + 1 \leq b$ and suppose that $a = b$ then $a + 1 \leq b = a$
+        which cannot be because of part (1) of this Theorem, so lets suppose
+        that $a > b$ then $a + 1 < a$ because of part (3) of this Theorem but
+        that cannot be true because of part (1) of this Theorem. Therefore
+        it must be that $a < b$.
+        \end{itemize}
+    \end{proof}
+    \begin{proof}{\textbf{1.2.5}}
+        Let $a+a = b+b$ then because of part (7) of Theorem 1.2.7 we can write
+        that $1\cdot a + 1 \cdot a = 1 \cdot b + 1 \cdot b$ and because of the
+        Distributive law we have that $a\cdot (1 + 1) = b\cdot (1 + 1)$ if we
+        name $c = 1 + 1$ then $ac=bc$ and because of part (12) of Theorem 1.2.7
+        we have that $a = b$.
+    \end{proof}
+    \begin{proof}{\textbf{1.2.6}}
+        Let
+        $$H = \{n \in \N ~|~1 \leq n \leq b\} \cup\{n \in \N ~|~ b+1 \leq n\}$$
+        We want to show that $H = \N$. It is clear that $H\subseteq\N$. Because
+        $1 \in \{n \in \N ~|~1 \leq n \leq b\}$ by definition then $1 \in H$.\\
+        Now let $r \in H$, we want to show that $r+1 \in H$, if $r=b$ then
+        $$r+1=b+1 \in \{n \in \N ~|~ b+1 \leq n\}$$
+        if $r < b$ then because of part (11) of Theorem 1.2.9 $r+1 \leq b$ then
+        $$r+1 \in \{n \in \N ~|~1 \leq n \leq b\}$$
+        if $b < r$ then because of part (11) or Theorem 1.2.9 $b+1 \leq r$
+        also because of part (1) of Theorem 1.2.9 $r < r+1$ then because
+        of part (3) of Theorem 1.2.9 we have that $b+1 < r+1$ then
+        $$r+1 \in \{n \in \N ~|~ b+1 \leq n\}$$
+        Therefore $r+1 \in H$ and $H = \N$.\\
+        Now Let
+        $$G = \{n \in \N ~|~1 \leq n \leq b\} \cap\{n \in \N ~|~ b+1 \leq n\}$$
+        Suppose there is an $r\in G$. We will derive a contradiction.
+        Then it must happen that $1\leq r \leq b$ and that $b +1 \leq r$ but
+        then because of part (3) of Theorem 1.2.9 it must happen that 
+        $b+1 \leq b$ which is a contradiction to the part (6) of Theorem 1.2.9.
+        Therefore there is no $r \in G$.
+    \end{proof}
+    \begin{proof}{\textbf{1.2.7}}
+        \begin{itemize}
+        \item [(1)] Let
+        $$H = \{n \in \N ~|~ a+n \in A \text{ for all }a\in A\}$$
+        We want to show that $H = \N$ which will imply the desired result. It 
+        is clear that $H\subseteq\N$. To show that $1 \in H$ let $b \in A$ then
+        $b + 1 \in A$ by definition of $A$ and then $1 \in H$.
+
+        Now let $r \in H$ then $b + r \in A$ for some $b \in A$ and by
+        definition of $A$ we have that $(b + r) + 1 = b + (r + 1)\in A$ then
+        $r +1 \in H$ and therefore $H = \N$.
+        \item [(2)] Let $H = \{x \in \N ~|~ x \geq a\}$ and let $r \in H$ then
+        $r \geq a$ so it must happen that $r = a$ or $r > a $ in the first
+        case it is clear that $r = a \in A$ in the second case by definition
+        there is a $p \in \N$ such that $r = a + p$ and we know because of the
+        part (1) that $a + p \in A$. Therefore it must happen that
+        $H \subseteq A$.
+        \end{itemize}
+    \end{proof}
+    \begin{proof}{\textbf{1.2.8}}
+        We want to prove that there is an inverse function for $f$. We have a
+        set $\N'$ with an element $1'\in\N'$ and a function
+        $s':\N'\rightarrow \N'$ that satisfy the Peano Postulates so we could
+        say because Theorem 1.2.4 that there is a function
+        $g:\N' \rightarrow \N$ such that $g(1') = 1$ and $g \circ s' = s \circ g$.
+        Now we have to check that $g$ is the inverse of $f$.\\
+        Let
+        $$G = \{n \in \N ~|~ g(f(n)) = n\}$$
+        We want to show that $G = \N$. It  is clear that $G\subseteq\N$.
+        To show that $1 \in G$ we do $g(f(1)) = g(1') = 1$ which means that
+        $1 \in G$.\\
+        Now Let $r \in G$ we want to show that $r+1 \in G$ then
+        \begin{align*}
+            g(f(r+1)) &= g(f(s(r))) & \text{by definition of }r+1\\
+                &= g(s'(f(r))) & \text{because }f \circ s = s' \circ f\\
+                &= s(g(f(r))) & \text{because }g \circ s' = s \circ g\\
+                &= s(r) = r + 1 & \text{because }r \in G
+        \end{align*}
+        Therefore $r+1 \in G$ and $G = \N$.
+        In the same way, let
+        $$H = \{n \in \N' ~|~ f(g(n)) = n\}$$ 
+        We want to show that $H = \N'$. It  is clear that $H\subseteq\N'$.
+        To show that $1' \in H$ we do $f(g(1')) = f(1) = 1'$ which means that
+        $1' \in H$.\\
+        Now let $r' \in H$ we want to show that $r' +1 \in H$ then
+        \begin{align*}
+            f(g(r'+1)) &= f(g(s'(r'))) & \text{by definition of }r'+1\\
+                &= f(s(g(r'))) & \text{because }g \circ s' = s \circ g\\
+                &= s'(f(g(r'))) & \text{because }f \circ s = s' \circ f\\
+                &= s'(r') = r' + 1 & \text{because }r' \in H
+        \end{align*}
+        Therefore $r'+1 \in H$ and $H = \N'$.\\
+        Finally, $g$ is the inverse of $f$ hence $f$ is bijective, which is
+        what we wanted.
+    \end{proof}
+    \begin{proof}{\textbf{1.3.1}}
+        \begin{itemize}
+            \item [(1)] We want to prove that $\approx$ is an equivalence relation so we
+            must prove that it is reflexive, symmetric and transitive. Let
+            $(a,b),(c,d) \in \N \times \N$. Given that $a^2b=a^2b$ then
+            $(a,b) \approx (a,b)$. Therefore $\approx$ is reflexive. \\
+            Suppose that $(a,b) \approx (c,d)$ then $a^2d=c^2b$ but also $c^2b=a^2d$
+            hence $(c,d) \approx (a,b)$ and therefore $\approx$ is symmetric. \\
+            Now suppose that also $(e,f) \in \N \times \N$ and $(c,d) \approx (e,f)$ 
+            then $c^2f = e^2d$ but we know that $a^2d=c^2b$ multiplying this last
+            equation on both sides with $f$ and doing a few re-arrangements we have that
+            $a^2df = c^2fb = e^2db$ then $a^2f=e^2b$ which means that
+            $(a,b) \approx (e,f)$. Therefore $\approx$ is transitive.\\
+            Finally since $\approx$ is reflexive, symmetric and transitive then
+            $\approx$ is an equivalence relation on $\N \times \N$.
+            \item [(2)] The elements of the equivalence class $[(2,3)]$ are
+            $$[(2,3)] = \{(x,y)\in\N\times\N~|~ 4y = (x^2)3\}$$
+        \end{itemize}
+    \end{proof}
+    \begin{proof}{\textbf{1.3.2}}
+            We want to complete the proof by showing that $\sim$ is transitive. Let
+            $(e,f) \in \N \times \N$ and $(c,d) \sim (e,f)$ then $c+f = d+e$ also we
+            know that $a+d = b+c$ and adding to both sides $f$ we get that
+            $a+d+f = b+c+f = b+d+e$ then $a+f = b+e$ because of Theorem 1.2.7 part (1).
+            Therefore $(a,b)\sim(e,f)$.\\
+            Finally since $\sim$ is reflexive, symmetric and transitive then
+            $\sim$ is an equivalence relation on $\N \times \N$.
+    \end{proof}
+    \begin{proof}{\textbf{1.3.3}}
+        Let's prove first that $-$ is well-defined for $\Z$. Let
+        $(a,b),(x,y) \in \N \times \N$ and suppose that $[(a,b)] = [(x,y)]$ then
+        $(a,b)\sim(x,y)$ so $a+y = b+x$ but if we write $b+x=a+y$ we have that
+        $(b,a) \sim (y,x)$ therefore $-[(a,b)]=[(b,a)]=[(y,x)]=-[(x,y)]$.\\
+        Now let's prove that $\cdot$ is well-defined for $\Z$. Let
+        $(a,b),(c,d),(x,y),(z,w) \in \N \times \N$ and suppose $[(a,b)] = [(x,y)]$ and
+        $[(c,d)] = [(z,w)]$ so by hypothesis $(a,b) \sim (x,y)$ and $(c,d) \sim (z,w)$
+        then $a+y=b+x$ and $c+w=d+z$.
+        Taking into account this let's do
+        \begin{align*}
+            &(ac + bd + xw + yz) + (xc + yc + xd + yd) = \\
+            &= c(a + y + x) + d(b + x + y) + xw + yz \\
+            &= c(b + x + x) + d(a + y + y) + xw + yz \\
+            &= bc + xc + xc + ad + yd + yd + xw + yz \\
+            &= ad + bc + x(c + c + w) + y(d + d + z) \\
+            &= ad + bc + x(c + d + z) + y(d + c + w) \\
+            &= (ad + bc + xz + yw) + (xc + yc + xd + yd)
+        \end{align*}
+        which proves that $ac + bd + xw + yz  = ad + bc + xz + yw$ and therefore
+        $[(ac+bd,ad+bc)] = [(xz+yw,xw+yz)]$.
+    \end{proof}
+    \begin{proof}{\textbf{1.3.4}}
+    \begin{itemize}
+        \item [(1)]
+        ($\rightarrow$) If $[(a,b)]=\hat{0}$ then $[(a,b)] = [(1,1)]$ because of the
+        definition of $\hat{0}$ then $(a,b) \sim (1,1)$ so $a+1=b+1$ because of the
+        Cancellation Law of $\N$ we have that $a=b$.\\
+        ($\leftarrow$) If $a=b$ then adding to both sides $1$ we have that $a+1=b+1$
+        then by the Definition 1.3.1 $(a,b)\sim(1,1)$ therefore $[(a,b)]=[(1,1)]$.
+        \item [(2)]
+        ($\rightarrow$) If $[(a,b)]=\hat{1}$ then $[(a,b)] = [(1+1,1)]$ because of the
+        definition of $\hat{1}$ then $(a,b) \sim (1+1,1)$ so $a+1=(b+1)+1$ because of
+        the Cancellation Law of $\N$ we have that $a=b+1$.\\
+        ($\leftarrow$) If $a=b+1$ then adding to both sides $1$ we have that
+        $a+1=(b+1)+1=b+(1+1)$ then by the Definition 1.3.1 $(a,b)\sim(1+1,1)$
+        therefore $[(a,b)]=[(1+1,1)]$.
+        \item [(3)]
+        First let's prove that $[(a,b)]=[(n,1)]$ for some $n \in \N$ such that
+        $n \neq 1$ is and only if $a>b$.\\
+        ($\rightarrow$) Let $[(a,b)]=[(n,1)]$ for some $n \in \N$ where $n \neq 1$ then
+        $a+1=b+n$ and given that $n\in\N$ and $n \neq 1$ then $n$ can be written as
+        $n = q +1$ for some $q\in\N$ then $a+1=b+q+1$ and by the Cancellation law of
+        $\N$ we have that $a=b+q$ which by definition means that $a>b$.\\
+        ($\leftarrow$) Let $a>b$ by definition this means that $a = b +m$ where $m\in\N$
+        then if we add $1$ to both sides of the equation we have that
+        $a + 1 = b + m + 1$ then by naming $n = m + 1$ where $n \in \N$ we have that
+        $a+1=b+n$ and therefore $[(a,b)]=[(n,1)]$ where $n \neq 1$.\\
+        Now Let's prove that $a>b$ if and only if $[(a,b)]>\hat{0}$\\
+        ($\rightarrow$) Let $a>b$  if we add on both sides of the equation $1$ we get
+        that $a+1>b+1$ then this means that $[(a,b)]>\hat{0}=[(1,1)]$.\\
+        ($\leftarrow$) Let $[(a,b)]>\hat{0}=[(1,1)]$ then $a+1>b+1$ and because of
+        Theorem 1.2.9 part (4) we have that $a>b$.
+        \item [(4)]
+        First let's prove that $[(a,b)]=[(1,m)]$ for some $m \in \N$ such that
+        $m \neq 1$ if and only if $a<b$.\\
+        ($\rightarrow$) Let $[(a,b)]=[(1,m)]$ for some $m \in \N$ where $m \neq 1$ then
+        $a+m=b+1$ and given that $m\in\N$ and $m \neq 1$ then $m$ can be written as
+        $m = q +1$ for some $q\in\N$ then $a+q+1=b+1$ and by the Cancellation law of
+        $\N$ we have that $a+q=b$ which by definition means that $a<b$.\\
+        ($\leftarrow$) Let $a<b$ by definition this means that $b = a +n$ where $n\in\N$
+        then if we add $1$ to both sides of the equation we have that
+        $b + 1 = a + n + 1$ then by naming $m = n + 1$ where $m \in \N$ we have that
+        $a+m=b+1$ and therefore $[(a,b)]=[(1,m)]$ where $m \neq 1$.\\
+        Now Let's prove that $a<b$ if and only if $[(a,b)]<\hat{0}$\\
+        ($\rightarrow$) Let $a<b$  if we add on both sides of the equation $1$ we get
+        that $a+1<b+1$ then this means that $[(a,b)]<\hat{0}=[(1,1)]$.\\
+        ($\leftarrow$) Let $[(a,b)]<\hat{0}=[(1,1)]$ then $a+1<b+1$ and because of
+        Theorem 1.2.9 part (4) we have that $a<b$.
+    \end{itemize}
+    \end{proof}
+    \begin{proof}{\textbf{1.3.5}}
+    \begin{itemize}
+    \item [(1)]
+    Using the definition of addition of integers we see that
+    \begin{align*}
+        (x+y)+z &= ([(a,b)]+[(c,d)])+[(e,f)] \\
+                &= [(a+c,b+d)] + [(e,f)] \\
+                &= [((a+c)+e,(b+d)+f)] \\
+                &= [(a+(c+e),b+(d+f))] \\
+                &= [(a,b)] + [(c+d,d+f)] \\
+                &= [(a,b)] + ([(c,d)] + [(e,f)]) \\
+                &= x+(y+z)
+    \end{align*}
+    where the middle equality holds because of the Associative law of $\N$.
+    \item [(3)]
+    We want to prove that $x+\hat{0} = x$ by arriving to a contradiction. Let us suppose
+    $x + \hat{0} \neq x$ then this means that $[(a,b)]+[(1,1)] = [(c,d)]$ where
+    $[(c,d)] \neq [(a,b)]$ then $[(a+1,b+1)] = [(c,d)]$ so $a+1+d=b+1+c$ and by the
+    Cancellation of $\N$ we have that $a+d=b+c$ then $[(a,b)]=[(c,d)]$ which is a
+    contradiction and therefore $x+\hat{0} = x$.
+    \item [(4)]
+    Let $x=[(a,b)]$ then from the equation $(a+b)+1=(b+a)+1$ we have that
+    $[(a+b,b+a)]=[(1,1)]$ and thus $[(a,b)]+[(b,a)] = [(1,1)]$ therefore $x+(-x)=\hat{0}$. 
+    \item [(5)]
+    Let $x = [(a,b)]$, $y = [(c,d)]$ and $z = [(e,f)]$ then
+    \begin{align*}
+        (xy)z &= ([(a,b)]\cdot[(c,d)])\cdot[(e,f)] \\
+              &= [(ac + bd,ad + bc)] \cdot[(e,f)] \\
+              &= [((ac + bd)e+(ad + bc)f, (ac + bd)f+(ad + bc)e)] \\
+              &= [(ace + bde+adf + bcf, acf + bdf+ ade + bce)] \\
+              &= [(a(ce + df) + b(de + cf), a(cf + de) + b(df + ce))] \\
+              &= [(a,b)] \cdot [(ce + df, de + cf)] \\
+              &= [(a,b)] \cdot ([(c,d)] \cdot [(e,f)]) = x(yz)
+    \end{align*}
+    \item [(6)]
+    Let $x = [(a,b)]$ and $y = [(c,d)]$ then
+    \begin{align*}
+        xy &= [(a,b)]\cdot[(c,d)] \\
+           &= [(ac+bd,ad+bc)] \\
+           &= [(ca+db,cb+da)] \\
+           &= [(c,d)]\cdot[(a,b)] = yx    
+    \end{align*}
+    Where the middle equality is true because of the Commutative Law for Addition and
+    Multiplication.
+    \item[(7)]
+    Let $a,b\in\N$ then the equation $a(1+1)+b(1)+b=b(1+1)+a(1)+a$ is true and if we
+    let $x=[(a,b)]$ then the equation means that
+    $$[(a(1+1) + b(1),b(1+1) + a(1))] = [(a,b)]$$
+    then because of the definition of the $\cdot$ operation we have that
+    $$[(a,b)] \cdot [(1+1,1)] = [(a,b)]$$
+    therefore $x \cdot \hat{1} = x$.
+    \item [(8)]
+    Let $x = [(a,b)]$, $y = [(c,d)]$ and $z = [(e,f)]$ then
+    \begin{align*}
+        x(y+z) &= [(a,b)]\cdot([(c,d)] + [(e,f)]) \\
+               &= [(a,b)]\cdot[(c+e,d+f)] \\
+               &= [(a(c+e)+b(d+f),a(d+f)+b(c+e))] \\
+               &= [(ac+ae+bd+bf,ad+af+bc+be)] \\
+               &= [((ac+bd)+(ae+bf),(ad+bc)+(af+be))] \\
+               &= [(ac+bd,ad+bc)] + [(ae+bf,af+be)] \\
+               &= [(a,b)]\cdot[(c,d)] + [(a,b)]\cdot[(e,f)] = xy + xz
+    \end{align*}
+    \item [(10)]
+    Let us first prove that there is no way that two of $x<y$, $x=y$ or $x>y$ can be
+    true at the same time. \\
+    Let $x = [(a,b)]$ and $y = [(c,d)]$ and let's suppose that $x<y$ and $x=y$ are both
+    true then $x<x$ which means that $[(a,b)]<[(a,b)]$ and thus $a+b<b+a$
+    by the Cancellation law $a<a$ but that is a contradiction to Theorem 1.2.9 part (1).\\
+    In the same way let's suppose that $x>y$ and $x=y$ are both true then $x>x$, which
+    leads to the same result as before which is a contradition.\\
+    Finally, let's suppose that $x<y$ and $y<x$ are both true then from the first
+    inequality we have that $[(a,b)]<[(c,d)]$ then $a+d<b+c$, and from the last inequality
+    we have that $[(c,d)]<[(a,b)]$ then $c+b<a+d$ and by applying the Transitive law of
+    $\N$ we have that $a+d<a+d$ thus $a<a$ and we have already proven that this is a
+    contradiction.\\
+    Therefore no two of $x<y$, $x=y$ and $x>y$ can be true at the same time.\\
+    Now let's prove that one of them is always true. \\
+    Suppose $x,y \in \Z$ then $x=[(a,b)]$ and $y=[(c,d)]$ also it must be true that
+    $a+d<b+c$ or $a+d=b+c$ or $a+d>b+c$ because of Trichotomy of $\N$ if $a+d<b+c$ is
+    true then that means that $[(a,b)]<[(c,d)]$, if $a+d=b+c$ then $[(a,b)]=[(c,d)]$ or
+    if $a+d>b+c$ then $[(a,b)]>[(c,d)]$.
+    \item [(11)]
+    Let $x=[(a,b)]$, $y=[(c,d)]$ and $z=[(e,f)]$ then if $x<y$ and $y<z$ that means 
+    that $a+d<b+c$ and from the second inequality we have that $c+f<d+e$ then
+    by definition $b+c = (a+d) + p$ and $d+e = (c+f)+q$ where $p,q \in \N$ then summing
+    both equations we have that
+    \begin{align*}
+        (b+c)+(d+e) &= (a+d)+p+(c+f)+q \\
+        b+e &= (a+f)+(p+q)
+    \end{align*}
+    If we name $k=p+q$ then by definition $a+f<b+e$ and therefore $[(a,b)]<[(e,f)]$ thus
+    $x<z$.
+    \item [(13)]
+    Let $x=[(a,b)]$, $y=[(c,d)]$ and $z=[(e,f)]$ then if $x<y$ this means that $a+d<b+c$
+    and by definition $b+c=(a+d)+p$ where $p\in\N$ also we know that $\hat{0}<z$ so
+    $1+f<1+e$ and also by definition this means that $e = f + q$ where $q \in \N$.
+    Multiplying both sides of $b+c=(a+d)+p$ with $e$ we get that
+    $$e(b+c)=e(a+d)+ep$$
+    And doing the same with $f$ we get that
+    $$f(a+d)+fp=f(b+c)$$
+    Then summing both equations we get that
+    $$f(a+d)+e(b+c)+fp=f(b+c)+e(a+d)+ep$$
+    Replacing $e=f+q$ on the right hand side of the equation we get that
+    $$f(a+d)+e(b+c)+fp=f(b+c)+e(a+d)+fp+qp$$
+    and by the Cancellation law we get that
+    $$f(a+d)+e(b+c)=f(b+c)+e(a+d)+qp$$
+    Which means that $f(b+c)+e(a+d)<f(a+d)+e(b+c)$ then $ae+bf+cf+de<af+be+ce+df$
+    and thus $[(ae+bf,af+be)]<[(ce+df,cf+de)]$ therefore $xy<xz$.
+    \item [(14)]
+    Let's suppose that $\hat{0}=\hat{1}$ we want to arrive to a contradiction, then
+    $[(1,1)]=[(1+1,1)]$ so $1+1=1+(1+1)$ and by the Cancellation law we have that
+    $1=(1+1)$ which cannot be because there is no $a,b\in\N$ such that $a+b=1$.
+    Therefore $\hat{0}\neq\hat{1}$.
+    \end{itemize}
+    \end{proof}
+    \begin{proof}{\textbf{1.3.6}}
+    Let us prove the rest of the Theorem 1.3.7 
+    \begin{itemize}
+    \item [\textbf{1.}] The function $i: \N \rightarrow \Z$ is injective.\\
+    Let $i(n)=i(m)$ then by definition of $i$ we have that $[(n+1,1)]=[(m+1,1)]$ thus
+    $(n+1)+1=1+(m+1)$ and by the Cancellation law we have that $n=m$.
+    \item [\textbf{3.}] $i(1)=\hat{1}$ \\
+    By definition of $i$ we have that $i(1)=[(1+1,1)]$ and therefore $i(1)=\hat{1}$.
+    \item [\textbf{4b.}] $i(ab)=i(a)i(b)$\\
+    By definition of $i$ we have that $i(ab)=[(ab+1,1)]$ then
+    \begin{align*}
+        i(ab) &= [(ab+1,1)] \\
+              &= [(ab+a+b+1+1,a+b+1+1)] \\
+              &= [((a+1)(b+1)+1,(a+1)+(b+1))] \\
+              &= [(a+1,1)]\cdot [(b+1,1)] \\
+              &= i(a)i(b)        
+    \end{align*}
+    \item [\textbf{4c.}] $a < b$ if and only if $i(a) < i(b)$.\\
+    ($\rightarrow$) By definition $a<b$ means that $b=a+p$ where $p\in\N$ then applying
+    the function $i$ to both sides of the equation we have that $i(b)=i(a+p)$ and
+    because of what we have proven in \textbf{4a} we have that $i(b)=i(a)+i(p)$ which by
+    definition means $i(a)< i(b)$.\\
+    ($\leftarrow$) By definition $i(a)<i(b)$ means that $[(a+1,1)]<[(b+1,1)]$ and thus
+    $(a+1)+1<1+(b+1)$ and because of the Cancellation law we have that $a<b$ as we
+    wanted.
+    \end{itemize}
+    \end{proof}
+    \begin{proof}{\textbf{1.3.7}}
+    \begin{itemize}
+        \item [(1)] ($\rightarrow$)
+        Let $x < y$ then by the Addition Law for Order we have that $x + (-x) < y+(-x)$
+        then by the Inverses Law for Addition we have that $0 < y+(-x)$ applying the
+        Addition Law for Order again we have that $0 +(-y) < (y+(-x))+(-y)$ then by applying
+        the Commutative and Associative Law for Addition we have that $-y < (y+(-y))+(-x)$
+        and therefore $-y < -x$.\\
+        ($\leftarrow$)
+        Let $-y <-x$ then by the Addition Law for Order we have that $x + (-y) < x+(-x)$
+        then by the Inverses Law for Addition we have that $x+(-y) < 0$ applying the
+        Addition Law for Order again we have that $(x + (-y))+y < 0 + y$ then by applying
+        the Commutative and Associative Law for Addition we have that $((-y)+y)+x < y$
+        and therefore $x < y$.
+        \item [(2)] ($\rightarrow$)
+        Let $z<0$ and $x<y$ then $-z > 0$ because Lemma 1.4.5 part(8) and by the
+        Multiplication Law for Order we have that $x(-z) < y(-z)$ which by the Lemma
+        1.3.8 part 6 we know that $-xz < -yz$ thus $xz > yz$ because what we saw in part
+        (1) of this problem.\\
+        ($\leftarrow$)
+        Let $xz>yz$ where $z <0$ because what we saw in part (1) of this problem this
+        means that $-xz < -yz$ and then by the Multiplication Law for Order we have that
+        $x<y$ because $-z > 0$.
+    \end{itemize}
+    \end{proof}
+    \begin{proof}{\textbf{1.3.8}}
+        From Theorem 1.3.9 we know that if $z \in \Z$ there is no $y \in \Z$ such that
+        $z<y<z+1$ then there is no $x$ such that $0<x<1$ so if $x>0$ it must be that
+        $x \geq 1$.\\
+        If $x<0$ then $-x>0$ and as we saw this means that $-x\geq 1$ and by what we
+        proved in problem 1.3.7 given that $-1<0$ then $-1 \cdot -x < -1 \cdot 1$
+        therefore $-(1 \cdot (-x)) = -(-x) = x < -1$ where in the equalities we are
+        using the fact that $(-x)y = -xy = x(-y)$.  
+    \end{proof}
+    \begin{proof}{\textbf{1.3.9}}
+        \begin{itemize}
+            \item [(1)]
+            From the part (9) of the Lemma 1.4.5 we know that $0 < 1$ then by the
+            Addition Law for Order we have that $0 + 1 < 1 + 1$ by the Identity Law for
+            Addtion we have that $1 < 1+1$ and now let us call $2$ the following addition
+            $2 = 1+1$ therefore $1 < 2$.
+            \item [(2)]
+            Suppose $2x = 1$ where $x \in \Z$ then as we proved in part (1) we have that
+            $2x < 2 = 2 \cdot 1$ then by the Multiplication Law for Order we have that
+            $x < 1$ then $x \leq 0$ if $x = 0$ then $2 \cdot 0 = 0 \neq 1$ so must
+            happen that $x < 0$ then by Lemma 1.4.5 part (11) $2 \cdot x < 0$ but
+            $1 > 0$ which is a contradiction. Therefore $2x \neq 1$. 
+        \end{itemize}
+    \end{proof}
+    \begin{proof}{\textbf{1.3.10}}
+        Let's define $G' = i^{-1}(G)$ which is the inverse image of $G$ then
+        $G' \subseteq \N$ and because of the Well-Ordering Principle for $\N$ there is
+        $m \in G'$ such that $m \leq g$ for all $g \in G'$. By appying $i$ to both sides
+        of the inequality we have that $i(m) \leq i(g)$ which we can do because of part
+        4c of Theorem 1.3.7.
+        We know that $G \subseteq \{x \in \Z ~|~x>\hat{0}\} = i(\N)$ then the elements
+        of $G$ have the form $i(a)$ where $a \in G'$ then $i(m),i(g) \in G$ so we want
+        to check that $i(m)$ is the minimum then let's suppose that $i(m) > i(g)$ we
+        want to arrive to a contradiction then $[(m+1,1)] > [(g+1,1)]$ and thus
+        $m+1+1>g+1+1$ by the Cancellation law we have that $m>g$ which is a
+        contradiction as we wanted because $m$ is the minimum of $G'$. Therefore
+        $i(m) \leq i(g)$ for all $i(g) \in G$.         
+    \end{proof}
+    \begin{proof}{\textbf{1.3.11}}
+        \begin{itemize}
+        \item [(1)]
+        By adding to both sides of the equation $(-z)$ we get that $(x + z) + (-z) = (y + z) + (-z)$
+        and by the Associative Law for Addition we have that $x + (z + (-z)) = y + (z + (-z))$
+        then because of the Inverse Law for Addition we have that $x + 0 = y + 0$
+        which means that $x = y$ because of the Identity Law for Addition.
+        \item [(3)]
+        By the Inverses Law for Addition we know that $(x+y) + (-(x+y)) = 0$ then adding
+        to both sides of the equation $-x$ and $-y$ we get that
+        $(-x) + (-y) + (x+y) + (-(x+y)) = (-x) + (-y)$ then by using multiple times the
+        Commutative and Associative Law for addition we get that
+        $(x + (-x)) + (y + (-y)) + (-(x+y)) = (-x) + (-y)$ then
+        $0 + 0 + (-(x+y)) = (-x) + (-y)$ because of the Inverses Law for Addition and
+        therefore $-(x+y) = (-x) + (-y)$ because of the identity law for Addition.
+        \item [(4)]
+        Let us suppose that $x\cdot 0 \neq 0$ we want to arrive to a contradiction 
+        then by the Trychotomy Law it must hold
+        that $x \cdot 0 > 0$ or $x \cdot 0 < 0$. Let's suppose that $x \cdot 0 > 0$
+        holds then by the Addition Law for Order we have that $(x \cdot 0) + x > 0 + x$
+        and because the Identity Law for Multiplication we have that  
+        $(x \cdot 0) + (x \cdot 1) > 0 + x$ then by the Identity Law for Addition and
+        the Distributive Law we have that $x \cdot (0 + 1) > x$ again by the Identity
+        Law for Addition we have that $x \cdot 1 > x$ then $x > x$ because of the
+        Identity Law for Multiplication but this cannot be then it must hold that
+        $x \cdot 0 < 0$ but by the same type of arguments we see that this cannot be
+        either. Therefore it must be that $x \cdot 0 = 0$.
+        \item [(5)]
+        Suppose that $y = x + k$ where $k \in \Z$ then we get that $xz = yz = (x + k)z$
+        and by adding to both sides of the equation $-xz$ we get that
+        $xz + (-xz) = (xz + kz) + (-xz)$ then by applying the Associative and 
+        Commutative Law for Addition we get that $xz + (-xz) = (xz + (-xz)) + kz$
+        and by the Inveses Law for Addition we get that $0 = 0 + kz = kz$ then either
+        $k = 0$ or $z = 0$ by the Non Zero Divisors Law, but we know that $z \neq 0$
+        then it must be that $k = 0$ therefore $y = x + 0 = x$.
+        \item [(7)]
+        ($\rightarrow$) If $xy=1$ we have a few cases we need to address to prove that
+        either $x=y=1$ or $x=y=-1$. Given that if $x >0$ and $y >0$ then $xy > 0$ and
+        if $x>0$ and $y<0$ then $xy < 0$ we can rule a lot of cases by taking into
+        account that either both $x$ and $y$ are positive or both are negative. Also
+        the case where one of them or both are $0$ is also ruled out because of part (4)
+        of this Lemma.
+        \begin{itemize}
+            \item Let's check first the case where both $x$ and $y$ are positive.
+            Let then $x > 1$ and $y > 1$ by multiplying the $y$ inequality by $x$
+            we have that $xy>x\cdot 1$ then because of the Identity Law for
+            Multiplication we have that $xy > x > 1$ thus $xy \neq 1$.
+            \item Now let $x<-1$ and $y<-1$ then $-x > 1 > 0$ because of part (8) of this
+            Lemma so we multiply both sides of the $y$ inequality by $-x$ as
+            $-xy < -1 \cdot 1$ and because of the Identity Law for Multiplication we
+            have that $-xy < -1 < 0$ and then again by the part (8) of this Lemma we have
+            that $xy > 1$ thus $xy \neq 1$.
+            \item Finally, the only option left is that $x=y=1$ or $x=y=-1$. In the first
+            case by the Identity Law for Multiplication we have that
+            $xy = 1 \cdot 1 = 1$ and in the second case if $x=y=-1$ we have that
+            $xy= (-1) \cdot (-1) = -((-1)\cdot 1)$ because of part (6) of this Lemma and
+            then $xy = -(-1) = 1$ because the Identity Law for Multiplication and part
+            (2) of this Lemma.            
+        \end{itemize}
+        Therefore, if $xy=1$ then $x=y=1$ or $x=y=-1$.\\ 
+        ($\leftarrow$) As shown before if $x=y=1$ or $x=y=-1$ then $xy=1$.
+        \item [(8)]
+        ($\rightarrow$) If $x > 0$ then by adding to both sides of the equation $-x$ we
+        have that $x+ (-x) > 0 + (-x)$ then because of the Identity Law for Addition we
+        have that $x+ (-x) > -x$ and because of the Inverses Law for Addition $0 > -x$.\\
+        ($\leftarrow$) If $-x < 0$ then by adding to both sides of the equation $x$ we
+        have that $x+ (-x) < x + 0$ and because of the Identity Law and the Inverses Law
+        for Addition we have that $0 < x$.\\
+        ($\rightarrow$) If $x < 0$ then by adding to both sides of the equation $-x$ we
+        have that $x+ (-x) < 0 + (-x)$ and because of the Identity Law and the Inverses
+        Law for Addition we have that $0 < -x$.\\
+        ($\leftarrow$) If $-x > 0$ then by adding to both sides of the equation $x$ we
+        have that $x+ (-x) > x + 0$ and because of the Identity Law and the Inverses
+        Law for Addition we have that $0 > x$.
+\cleardoublepage
+        \item [(10)]
+        If $x \leq y$ then either $x = y$ or $x < y$ by definition and in the same way
+        if $y \leq x$ then either $y = x$ or $y < x$.\\
+        In case $x=y$ and $y=x$ then we are done.\\
+        In case $x = y$ and $y < x$ then by replacing $y$ we have that $x<x$ which isn't
+        true and thus $x = y$ must be true. The same can be proven for $y=x$ and $x<y$.\\
+        In case $x < y$ and $y < x$ then by the Transitive Law $x<x$ which is not true
+        and then must be that $x=y$.
+        \item [(11)]
+        If $x >0$ and $y>0$ then by multipyling the $y$ inequality by $x$ we have that
+        $xy > x \cdot 0$ and we can do that because of the Theorem 1.3.5 part (13) and
+        because of the result we proved in part (4) of this Lemma then $xy>0$.\\
+        If $x >0$ and $y<0$ then by multipyling the $y$ inequality by $x$ we have that
+        $xy < x \cdot 0$ and we can do that because of the Theorem 1.3.5 part (13) and
+        because of the result we proved in part (4) of this Lemma then $xy < 0$.
+    \end{itemize}
+    \end{proof}
+    \begin{proof}{\textbf{1.4.2}}
+        Let $n \in \N$ also we know that $\N$ is defined as $\N = \{x \in \Z ~|~ x > 0\}$ then
+        $n \in \Z$ and $n > 0$ by adding $1 > 0$ to both sides of the inequality we have
+        that $n +1 > 0 +1 = 1$ where $0 +1 = 1$ because of the Identity Law for Addition
+        and as we saw $1>0$ then $n+1>0$ and also $n+1 \in \Z$ therefore $n+1 \in \N$.  
+    \end{proof}
+    \begin{proof}{\textbf{1.4.3}}\\
+        ($\rightarrow$) If $x,y\in\Z$ and $x \leq y$ then by definition either $x=y$ or
+        $x<y$ if the last one holds then by adding $-x$ to both sides of the inequality
+        we have that $x+(-x)<y+(-x)$ and because of the Inverses Law for Addition we
+        have that $0 < y+(-x)$ and if we now add $-y$ to both sides of the inequality
+        we have that $(-y)+0<(-y)+(y+(-x))$ and because of the Identity Law for Addition
+        and the Associative Law we have that $-y < ((-y)+y)+(-x)$ then again by the
+        Inverses Law for Addition we have that $-y < -x$.\\
+        But if $x=y$ holds then applying the exact same steps as before we have that
+        $-y=-x$.\\
+        ($\leftarrow$) If $x,y\in\Z$ and $-y \leq -x$ then by definition either $-y=-x$ or
+        $-y<-x$ if the last one holds then by adding $x$ to both sides of the inequality
+        we have that $x+(-y)<x+(-x)$ and because of the Inverses Law for Addition we
+        have that $x+(-y)< 0$ and if we now add $y$ to both sides of the inequality
+        we have that $(x+(-y))+y<0+y$ and because of the Identity Law for Addition
+        and the Associative Law we have that $x + ((-y)+y) < y$ then again by the
+        Inverses Law for Addition we have that $x < y$.\\
+        But if $-y=-x$ holds then applying the exact same steps as before we have that
+        $x=y$.
+    \end{proof}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
