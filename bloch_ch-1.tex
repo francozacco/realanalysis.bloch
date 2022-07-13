@@ -19,6 +19,8 @@
 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
 \theoremstyle{definition}
 \newtheorem*{solution*}{Solution}
 
@@ -753,6 +755,235 @@
         Inverses Law for Addition we have that $x < y$.\\
         But if $-y=-x$ holds then applying the exact same steps as before we have that
         $x=y$.
+    \end{proof}
+\cleardoublepage
+    \begin{proof}{\textbf{1.4.4}}
+        We defined $\N = \{x \in \Z~|~x>0\}$ and we know because of Theorem 1.4.6 that
+        if $z \in \Z$ then there is no $y\in\Z$ such that $z<y<z+1$ then there is no
+        $x \in \Z$ such that $0<x<1$ then it must be that $\N = \{x \in \Z~|~x\leq 1\}$.
+    \end{proof}
+    \begin{proof}{\textbf{1.4.5}}
+        If $a<b$ then by adding $1$ to both sides of the equation we have that $a+1<b+1$
+        since we saw that there is no $y\in\Z$ such that $b<y<b+1$ then $a+1=b$ or
+        $a+1<b$ therefore $a+1\leq b$.
+    \end{proof}
+    \begin{proof}{\textbf{1.4.6}}
+        From problem 1.4.4 we know that $\N = \{x\in\Z~|~x\geq 1\}$ so if $n\in\N$ and
+        $n\neq 1$ then it must be that $n > 1$ so by definition there is $b \in \N$ such
+        that $n = b + 1$.
+    \end{proof}
+    \begin{proof}{\textbf{1.4.8}}
+        \begin{itemize}
+        \item [(1)]
+        Let us write $F = \{x\in G ~|~ x+(-a)+1\}$ we want to show by induction that
+        $F = \N$ which would be the same as showing that
+        $G = \{x\in \Z ~|~ x+(-a)+1 \geq 1\}$. Since $a\in G$ then $a+(-a)+1=1 \in F$.
+        Now if $g \in G$ then $g+(-a)+1 \in F$ and by definition we know that $g+1 \in G$
+        then $g+1+(-a)+1 = (g+(-a)+1)+1 \in F$ by using the Associative and Commutative
+        Law for Addition. Therefore $F=\N$.
+        \item [(2)]
+        Let us write $F = \{x\in H ~|~ a+(-x)+1\}$ we want to show by induction that
+        $F = \N$ which would be the same as showing that
+        $H = \{x\in \Z ~|~ 1 \leq a+(-x)+1\}$. Since $a \in H$ then $a+(-a)+1=1 \in F$.
+        Now if $h \in H$ then $a+ (-h)+1 \in F$ and by definition we know that
+        $h+(-1) \in G$ then $a+(-(h+(-1)))+1 = (a+(-h)+1)+1 \in F$ by using the
+        Associative and Comutative Law for Addition and the fact that $-(-1) = 1$.
+        Therefore $F = \N$.
+        \end{itemize}
+    \end{proof}
+    \begin{proof}{\textbf{1.5.1}}
+        We want to prove that $\asymp$ is an equivalence relation so we must prove that
+        it is reflexive, symmetric and transitive. Let $(a,b),(c,d) \in \Z \times \Z^*$.
+        We note that $ab=ba$ because of the Commutative Law for Multiplication then
+        $(a,b)\asymp(a,b)$ thus $\asymp$ is reflexive. Now suppose that $(a,b)\asymp(c,d)$
+        then $ad=bc$ and because of the Commutative Law for Multiplication we have that
+        $cb=da$ then $(c,d)\asymp(a,b)$, therefore $\asymp$ is also symmetric.\\
+        We also proved that $\asymp$ is transitive. Therefore $\asymp$ is an equivalence
+        relation on $\Z \times \Z^*$. 
+    \end{proof}
+\cleardoublepage
+    \begin{proof}{\textbf{1.5.2}}
+        Let's prove that $+$ is well-defined for $\Q$.\\
+        Let $(x,y),(z,w),(a,b),(c,d) \in \Z \times \Z^*$ and suppose that $[(x,y)] = [(a,b)]$
+        and $[(z,w)]=[(c,d)]$ then $(x,y)\asymp(a,b)$ and $(z,w)\asymp(c,d)$ so $xb=ya$
+        and $zd=wc$ now multiplying both sides of the the first equation by $dw$ we have
+        that $xbdw=yadw$ also we now multiply both sides of the second equation by $yb$
+        to obtain $zdyb=wcyb$, now we add both equations
+        $$xbdw+zdyb=yadw+wcyb$$
+        by the Commutative Law and the Distribute Law we obtain
+        $$(xw+yz)(bd)=(yw)(ad+cb)$$
+        this means that $[(xw+yz,yw)]=[(ad+cb, bd)]$ therefore $+$ is well-defined.\\
+        Let's now prove that the unary operation $^{-1}$ is well-defined for $\Q$.\\
+        From $xb=ya$ we deduce that $bx=ay$ then $[(b,a)]=[(y,x)]$ so
+        $[(a,b)]^{-1}=[(b,a)]=[(y,x)]=[(x,y)]^{-1}$ therefore $^{-1}$ is well-defined.\\
+        Finally, let us prove that $<$ is well-defined for $\Q$.\\
+        % We want to get to ad<bc
+        Let $[(x,y)]=[(a,b)]$ and $[(z,w)]=[(c,d)]$ then we have that $xb=ya$ and $zd=wc$
+        also we have that $[(x,y)]<[(z,w)]$ if $y>0$ and $w>0$ or $y<0$ and $w<0$ then
+        $xw<yz$. If $bd > 0$ because $b$ and $d$ are either both positive or
+        both negatives then we can multiply the inequality by $bd$ to obtain
+        $$xwbd<yzbd$$
+        which by the Commutative and Associative Law we have that
+        $$(xb)(wd)<(zd)(yb)$$
+        then by replacing the values of $xb$ and $zd$ we get that
+        $$(ya)(wd)<(wc)(yb)$$
+        and again by the Commutative and Associative Law we have that
+        $$(yw)(ad)<(yw)(bc)$$
+        and since $yw>0$ then $ad<bc$.\\
+        If $bd<0$ because either $b<0$ and $d>0$ or $b>0$ and $d<0$ then $-(bd)>0$.
+        By multiplying both sides of the inequality with this number we get that 
+        $$-(xw)(bd)<-(yz)(bd)$$
+        which by the Commutative and Associative Law we have that
+        $$-(xb)(wd)<-(zd)(yb)$$
+        then by replacing the values of $xb$ and $zd$ we get that
+        $$-(ya)(wd)<-(wc)(yb)$$
+        and again by the Commutative and Associative Law we have that
+        $$-(yw)(ad)<-(yw)(bc)$$
+        and since $yw>0$ then $-ad<-bc$ and thus $ad>bc$.\\\\
+        Now if either $y<0$ and $w>0$ or $y>0$ and $w<0$ we have that $xw>yz$.
+        If $bd < 0$ because either $b<0$ and $d>0$ or $b>0$ and $d<0$ then $-(bd)>0$.
+        By multiplying both sides of the inequality with this number we get that 
+        $$-(bd)(xw)>-(bd)(yz)$$
+        which by the Commutative and Associative Law we have that
+        $$-(xb)(wd)>-(zd)(yb)$$
+        then by replacing the values of $xb$ and $zd$ we get that
+        $$-(ya)(wd)>-(wc)(yb)$$
+        and again by the Commutative and Associative Law we have that
+        $$-(yw)(ad)>-(yw)(bc)$$
+        and since $yw<0$ then $-(yw)>0$ and thus $ad>bc$.\\
+        Finally, if $bd > 0$ because $b$ and $d$ are either both positive or
+        both negatives then we can multiply the inequality by $bd$ to obtain
+        $$xwbd>yzbd$$
+        which by the Commutative and Associative Law we have that
+        $$(xb)(wd)>(zd)(yb)$$
+        then by replacing the values of $xb$ and $zd$ we get that
+        $$(ya)(wd)>(wc)(yb)$$
+        and again by the Commutative and Associative Law we have that
+        $$(yw)(ad)>(yw)(bc)$$
+        and since $yw<0$ then $-(yw)>0$ so we have that 
+        $$-(yw)(ad)<-(yw)(bc)$$
+        and thus $-ad<-bc$ which means that $ad>bc$.\\
+        Therefore the $<$ operation is well-defined.
+    \end{proof}
+\cleardoublepage
+    \begin{proof}{\textbf{1.5.3}}
+        \begin{itemize}
+        \item [(1)]
+        ($\rightarrow$) If $[(x,y)]=\bar{0}=[(0,1)]$ then by definition $x\cdot 1 = y \cdot 0$
+        and because of the Identity Law for Multiplication and the part (4) of the Lemma
+        1.4.5 we have that $x=0$.\\
+        ($\leftarrow$) If $x = 0$ then because of the Identity Law for Multiplication
+        and the part (4) of the Lemma 1.4.5 we can write that $x\cdot 1=y\cdot 0$ where
+        $y\in\Z^*$ then $[(x,y)]=[(0,1)]=\bar{0}$.
+        \item [(2)]
+        ($\rightarrow$) If $[(x,y)]=\bar{1}=[(1,1)]$ then by definition $x\cdot 1 = y\cdot 1$ and
+        because of the Identity Law for Multiplication we have that $x=y$.\\
+        ($\leftarrow$) If $x = y$ then because of the Identity Law for Multiplication
+        we can write that $x\cdot 1=y\cdot 1$ and by definition that means $[(x,y)]=[(1,1)]=\bar{1}$.
+        \item [(3)]
+        ($\rightarrow$) If $\bar{0}=[(0,1)]<[(x,y)]$ then by definition if $y>0$ this is
+        $0\cdot y < 1 \cdot x$ then because of the Identity Law for Multiplication and
+        the part (4) of the Lemma 1.4.5 we have that $x>0$ and therefore $xy>0$ because
+        both are positive numbers.\\
+        If $y<0$ then by definition $[(0,1)]<[(x,y)]$ means that $0\cdot y>1\cdot x$
+        then because of the Identity Law for Multiplication and the part (4) of the
+        Lemma 1.4.5 we have that $x<0$ and therefore $xy>0$ because both are negative
+        numbers.\\
+        ($\leftarrow$) If $xy>0$ then either $x>0$ and $y>0$ or $x<0$ and $y<0$. In the
+        first case i.e. $x>0$ and $y>0$ we have can write the first inequality as
+        $0\cdot y<1 \cdot x$ because of the Identity Law for Multiplication and the part
+        (4) of the Lemma 1.4.5 which means that $[(0,1)]<[(x,y)]$.\\
+        If $x<0$ and $y<0$ again from the first inequality we can write that
+        $0\cdot y>1\cdot x$ because of the Identity Law for Multiplication and the part
+        (4) of the Lemma 1.4.5 which means that $[(0,1)]<[(x,y)]$.
+        \end{itemize}
+    \end{proof}
+    \begin{proof}{\textbf{1.5.4}}
+        \begin{itemize}
+        \item [(1)]
+        From the definition of the $+$ operation we have that
+        \begin{align*}
+            (r+s)+t &= ([(x,y)]+[(z,w)]) + [(u,v)]\\
+                    &= [(xw+yz,yw)]+ [(u,v)]\\
+                    &= [((xw+yz)v+(yw)u,(yw)v)]
+        \end{align*}
+        Because of the Distributive, Commutative and Associative Law for Addition and
+        Multiplication of $\Z$ we have that
+        \begin{align*}
+            [((xw+yz)v+(yw)u,(yw)v)] &= [(x(wv)+y(zv+wu),y(wv))]\\
+                                     &= [(x, y)]+[(zv+wu, wv)]\\
+                                     &= [(x, y)] + ([(z, w)]+[(u, v)])\\
+                                     &= r + (s + t)     
+        \end{align*}
+        \item [(2)]
+        From the definition of the $+$ operation we have that
+        \begin{align*}
+            r+s &= [(x,y)]+[(z,w)]\\
+                &= [(xw+yz,yw)]
+        \end{align*}
+        Because of the Commutative law for Multiplication and Addition of $\Z$ we have
+        that
+        $$[(xw+yz,yw)] = [(zy+wx,wy)]$$
+        then
+        $$[(zy+wx,wy)] = [(z,w)] + [(x,y)] = s + r$$
+        \item [(3)]
+        From the definition of the $+$ operation and the $\bar{0}$ element we have that
+        \begin{align*}
+            r+\bar{0} &= [(x,y)]+[(0,1)]\\
+                &= [(x\cdot 1+y\cdot 0,y\cdot 1)] \\
+                &= [(x,y)] = r
+        \end{align*}
+        Where we are using the Identity Law for Multiplication and that $z\cdot 0 = 0$
+        where $z \in \Z$.
+        \item [(5)]
+        From the definition of the $\cdot$ operation we have that
+        \begin{align*}
+            (rs)t &= ([(x,y)]\cdot [(z,w)]) \cdot [(u,v)] \\
+                &= [(xz,yw)]\cdot [(u,v)] \\
+                &= [((xz)u, (yw)v)] \\
+                &= [(x(zu), y(wv))] \quad \begin{aligned}[t]&\text{Because of the Associative and} \\
+                                                            &\text{Commutative Law for Multiplication}\end{aligned}\\
+                &= [(x, y)]\cdot[(zu, wv)]\\
+                &= [(x, y)]\cdot([(z, w)]\cdot[(u,v)]) = r(st)
+        \end{align*}
+        \item [(6)]
+        From the definition of the $\cdot$ operation we have that
+        \begin{align*}
+            rs &= [(x,y)]\cdot [(z,w)] \\
+               &= [(xz,yw)]\\
+               &= [(zx,wy)] \quad \text{Because of the Commutative Law}\\
+               &= [(z,w)]\cdot[(x,y)] = sr
+        \end{align*}
+        \item [(8)]
+        From the definition of $r^{-1} = [(y,x)]$ we have that
+        \begin{align*}
+            rr^{-1} &= [(x,y)] \cdot [(y,x)]\\
+                &= [(xy,yx)]\\
+                &= [(yx,yx)] \quad \text{because of the Commutative Law}\\
+                &= \bar{1} \quad\quad \text{because of Problem 1.5.3 part (2)}
+        \end{align*}
+        \item [(9)]
+        From the definition of $+$ and $\cdot$ operations we have that
+        \begin{align*}
+            rs +rt &= [(x,y)]\cdot[(z,w)] + [(x,y)]\cdot[u,v]\\
+                &= [(xz,yw)] + [(xu,yv)]\\
+                &= [((xz)(yv) + (yw)(xu),(yw)(yv))]\\
+                &= [(y(xzv + wxu), y(ywv))]\quad \begin{aligned} &\text{because of the Distributive}\\
+                                                                 &\text{and Associative Law}\end{aligned}\\
+                &= [(y,y)]\cdot[(xzv + wxu, y(wv))]\\
+                &= \bar{1} \cdot[(xzv + wxu, y(wv))] \quad \text{because of Problem 1.5.3 part (2)}\\
+                &= [(xzv + wxu, y(wv))] \quad \text{because of the Identity Law}\\
+                &= [(x(zv+wu),y(wv))] \quad \begin{aligned} &\text{because of the Distributive}\\
+                                                            &\text{and Associative Law}\end{aligned}\\
+                &= [(x,y)]\cdot[(zv+wu,wv)]\\
+                &= [(x,y)]\cdot([(z,w)]+[(u,v)]) = r(s+t)
+        \end{align*}
+        \item [(11)]
+        We know that if $x<y$ if and only if $y-x \in P$ so given that $r<s$ and $s<t$
+        then $s-r, t-s \in P$ let us name $s-r = u$ and $t-s = v$ then
+        $u+v = (s-r) + (t-s) = t-r$ and we know that if $x,y \in P$ then $x+y \in P$
+        then $u+v = t-r \in P$ and therefore $r<t$.  
+        \end{itemize}
     \end{proof}
 
 \end{document}
