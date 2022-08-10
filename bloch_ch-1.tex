@@ -982,10 +982,482 @@
         We know that if $x<y$ if and only if $y-x \in P$ so given that $r<s$ and $s<t$
         then $s-r, t-s \in P$ let us name $s-r = u$ and $t-s = v$ then
         $u+v = (s-r) + (t-s) = t-r$ and we know that if $x,y \in P$ then $x+y \in P$
-        then $u+v = t-r \in P$ and therefore $r<t$. 
+        then $u+v = t-r \in P$ and therefore $r<t$.
+        \item [(12)]
+        Since $r<s$ then we know that $s-r \in P$ now if we compute $(s+t)-(r+t)=s-r$
+        we have that $(s+t)-(r+t) \in P$ and therefore $r+t<s+t$.
+        \item [(14)]
+        Let us suppose that $\bar{0} = \bar{1}$ we want to arrive to a contradiction
+        then $[(0,1)] = [(1,1)]$ which means that $0\cdot 1 = 1 \cdot 1$ but this means
+        that $0 = 1$ which is a contradiction because what we proved in Theorem 1.3.5
+        part (14). Therefore $\bar{0} \neq \bar{1}$.
         \end{itemize}
     \end{proof}
+    \begin{proof}{\textbf{1.5.5}}
+    \begin{itemize}
+        \item [(1)]
+        We want to prove that the function $i:\Z\rightarrow\Q$ is injective, then we
+        proceed as follows, let $x_1, x_2 \in \Z$ then if $i(x_1)=i(x_2)$ we have that
+        $[(x_1, 1)] = [(x_2, 1)]$ so $x_1\cdot 1=1 \cdot x_2$ and therefore $x_1 = x_2$
+        and the function is injective.
+        \item [(2)]
+        By definition $i(0) = [(0,1)] =\bar{0}$ and $i(1)=[(1,1)]=\bar{1}$
+        \item [(3)]
+        \begin{itemize}
+            \item [(a)]
+            By definition of $i$ function and the $+$ operation we have that 
+            \begin{align*}
+                i(x)+i(y) &= [(x,1)]+[(y,1)]\\
+                    &= [(x\cdot 1+1\cdot y, 1\cdot 1)]\\
+                    &= [(x+y, 1)] \quad\begin{aligned}\text{because of the Identity}\\
+                        \text{Law for Multiplication}\end{aligned} \\
+                    &= i(x+y)
+            \end{align*}
+            \item [(b)]
+            By definition of the $i$ function we have that $i(-x) = [(-x,1)]$ and because
+            of the defintion of the $-$ unary operation we have that $[(-x,1)]=-[(x,1)]$
+            therefore because of the definition of the function $i$ again we get that
+            $-[(x,1)]=-i(x)$.
+            \item [(c)]
+            By definition of $i$ function and the $\cdot$ operation we have that
+            \begin{align*}
+                i(x)i(y) &= [(x,1)]\cdot[(y,1)]\\
+                    &= [(xy,1\cdot 1)]\\
+                    &= [(xy,1)]\quad \text{Because of the Identity Law}\\
+                    &= i(xy)
+            \end{align*}
+            \item [(d)]
+            ($\rightarrow$) If $x<y$ then because of the Identity Law for Multiplication
+            we have that $x\cdot 1<1\cdot y$ and because of the definition of the $<$
+            operation we can write that $[(x,1)]<[(y,1)]$ which means that $i(x)<i(y)$.\\
+            ($\leftarrow$) If $i(x)<i(y)$ then by the definition of the $i$ function we
+            have that $[(x,1)]<[(y,1)]$. Because of the definition of the $<$ operation 
+            and given that $1>0$ as we proved earlier in the Lemma 1.4.5 we have that
+            $x\cdot 1<1\cdot y$ and because of the Identity Law for Multiplication we
+            have that $x<y$.
+        \end{itemize}
+    \end{itemize}
+    \end{proof}
+    \begin{proof}{\textbf{1.5.6}}
+    \begin{itemize}
+        \item [(2)]
+        If $r<s$ then because of the Addition Law for Order we have that $r+(-r)<s+(-r)$
+        which means because of the Inverses Law for Addition that $0<s+(-r)$ then again
+        by the Addition Law for Order we have that $(-s)+0<((-s)+s)+(-r)$ then it follows
+        because of the Identity Law for Addition and the Inverses Law for Addition that
+        $-s<-r$ as we wanted.
+        \item [(3)]
+        Let us suppose that $r\cdot 0 \neq 0$ we want to arrive to a contradiction 
+        then by the Trychotomy Law it must hold
+        that $r \cdot 0 > 0$ or $r \cdot 0 < 0$. Let's suppose that $r \cdot 0 > 0$
+        holds then by the Addition Law for Order we have that $(r \cdot 0) + r > 0 + r$
+        and because the Identity Law for Multiplication we have that  
+        $(r \cdot 0) + (r \cdot 1) > 0 + r$ then by the Identity Law for Addition and
+        the Distributive Law we have that $r \cdot (0 + 1) > r$ again by the Identity
+        Law for Addition we have that $r \cdot 1 > r$ then $r > r$ because of the
+        Identity Law for Multiplication but this cannot be then it must hold that
+        $r \cdot 0 < 0$ but by the same type of arguments we see that this cannot be
+        either. Therefore it must be that $r \cdot 0 = 0$.
+\cleardoublepage
+        \item [(1)]
+        We know from the Theorem 1.5.5 (14) that $0\neq 1$ and by the Trychotomy Law
+        then either $0<1$ or $1<0$. Let us suppose that $1<0$ and because of part (2)
+        of this problem we have that $-0=0<-1$ then we multiply both sides of the 
+        inequality by $-1$ as $1\cdot (-1) < 0\cdot(-1)$ because what we proved in
+        part (3) we have that $1\cdot(-1)<0$ and finally because of the Identity Law for
+        Multiplication we have that $-1<0$ which is a contradiction to what we showed
+        earlier. Therefore it must be that $0<1$.\\
+        On the other hand, because of what we proved in part (2) of this problem and
+        starting from the fact that $0<1$ we have that $-1<-0=0$
+        as we wanted. It follows then that $-1<0<1$.
+        \item [(4)]
+        If $r>0$ and $s>0$ then
+        \begin{align*}
+            r+s &> 0+s \quad \text{by the Addition Law for Order}\\
+                &= s \quad \text{by the Identity Law for Addition}\\
+                &> 0 \quad \text{by the Transitive Law}
+        \end{align*}
+        Also, using the $r>0$ inequality we have that
+        \begin{align*}
+            rs &> 0\cdot s \quad \text{by Multiplication Law for Order since }s>0\\
+                &= 0 \quad \text{because Problem (3)}
+        \end{align*}
+        Therefore $r+s>0$ and $rs>0$ as we wanted.
+        \item [(5)]
+        We know that $rr^{-1}=1$ then $rr^{-1}>0$ because $1>0$ as we proved. It followss
+        then that $r^{-1} \neq 0$ because what we proved in problem (3). Let us suppose
+        now that $r^{-1}<0$ then since $r>0$ we can multiply both sides of the inequality
+        to obtain that $rr^{-1}<r \cdot 0 = 0$ where we used the result of problem (3)
+        and we have a contradiction to the fact that $rr^{-1}>0$. Therefore must be that
+        $r^{-1}>0$.
+        \item [(6)]
+        Because of the Identity Law for Multiplication we can write $r<s$ as
+        $1\cdot r<s\cdot 1$. Because of the Transitive Law since $r>0$ we have that $s>0$ too.
+        If follows then because of Lemma 1.5.8 (6) that $\frac{1}{s}<\frac{1}{r}$ as we
+        wanted.
+        \item [(7)]
+        Given that $s>0$ we can multiply both sides of the inequality $r<p$ by $s$ to get
+        $rs<ps$ also because of the Transitive Law $p>0$ so we can multiply the inequality
+        $s<q$ by $p$ to get $ps<pq$ and therefore by the Transitive Law we have that
+        $rs<pq$ as we wanted. 
+    \end{itemize}
+    \end{proof}
+    \begin{proof}{\textbf{1.5.7}}
+    \begin{itemize}
+        \item [(1)]
+        We know that $0<1$ from problem 1.5.6 (1) and because of the Addition Law for
+        Order we can add to both sides $1$ to get $0+1<1+1$. Let us call $2$ the addition 
+        $1+1$ therefore applying this definition and by the Identity Law for Addition we
+        have that $1<2$.
+        \item [(2)]
+        Since $s,t \in \Q$ then we can write them as $s=\frac{a}{b}$ and $t=\frac{c}{d}$
+        where $a,b,c,d \in \Z$.\\
+        Let us compute $\frac{s + t}{2} = (s+t)\cdot \frac{1}{2}$ as
+        \begin{align*}
+            (s+t)\cdot \frac{1}{2} &= (\frac{a}{b} + \frac{c}{d})\cdot \frac{1}{2}\\
+                &= (\frac{ad+bc}{bd})\cdot \frac{1}{2} \quad \text{because Lemma 1.5.8 (2)}\\
+                &= \frac{ad+bc}{2 \cdot (bd)} \quad \text{because Lemma 1.5.8 (4)}
+        \end{align*}
+        Therefore since $ad+bc \in \Z$ and $2\cdot (bd) \in \Z$ and $\frac{s+t}{2}$ can
+        be written as a fraction then $\frac{s+t}{2} \in \Q$.\\
+        Let us now prove that $s< \frac{s+t}{2}<t$ as follows.
+        \begin{align*}
+            s&<t\\
+            s+s&<s+t \quad \text{by the Addition Law for Order}\\
+            s(1+1)&<s+t \quad \text{by Distributive and Identity Law}\\
+            s\cdot 2 &< s+t \quad \text{by Definition of 2}\\
+            s \cdot (2\cdot 2^{-1}) &< (s+t) \cdot 2^{-1}\quad
+                \begin{aligned}
+                    &\text{by Multiplication Law for Order}\\
+                    &\text{since }2>0\text{ then }2^{-1}>0
+                \end{aligned}\\
+            s &< \frac{s+t}{2} \quad \text{by Inverses Law for Multiplication}
+        \end{align*}
+        On the other hand, we have that
+        \begin{align*}
+            s&<t\\
+            s+t&<t+t \quad \text{by the Addition Law for Order}\\
+            s+t&<t(1+1) \quad \text{by Distributive and Identity Law}\\
+            s+t &< t\cdot 2 \quad \text{by Definition of 2}\\
+            (s+t) \cdot 2^{-1} &< t \cdot (2\cdot 2^{-1}) \quad
+                \begin{aligned}
+                    &\text{by Multiplication Law for Order}\\
+                    &\text{since }2>0\text{ then }2^{-1}>0
+                \end{aligned}\\
+            \frac{s+t}{2} &< t \quad \text{by Inverses Law for Multiplication}
+        \end{align*}
+        Therefore by joining both results we have that $s<\frac{s+t}{2}<t$.
+    \end{itemize}        
+    \end{proof}
+    \begin{proof}{\textbf{1.5.8}}
+    \begin{itemize}
+        \item [(1)]
+        We know that $r=\frac{a}{b}>\frac{0}{1}=0$ where $a,b \in \Z$ and $b \neq 0$.\\
+        Let us suppose that $b>0$ then because of the Lemma 1.5.8 (6) we have that
+        $a\cdot 1 > b\cdot 0$. It follows then that $a>0$ because of the Identity Law
+        for Multiplication and the result of Exercise 1.5.6 (3).\\
+        Let us now suppose that $b<0$ then because of the Lemma 1.5.8 (6) we have that
+        $a\cdot 1 < b\cdot 0$. It follows then that $a<0$ because of the Identity Law
+        for Multiplication and the result of Exercise 1.5.6 (3).
+        \item [(2)]
+        Since $r\in \Q$ then we can write $r=\frac{a}{b}$. Where $a,b \in \Z$.
+        If $a>0$ and $b>0$ then we are done. So let $a<0$ and $b<0$ then $-a>0$ and $-b>0$. 
+        We know also that
+        $$a\cdot(-b) = (-a)\cdot b$$
+        because of Lemma 1.4.5 (6) and by writing
+        $$a\cdot(-b) = b\cdot (-a)$$
+        then this means that $r = \frac{a}{b} = \frac{-a}{-b}$ because of the Lemma 1.5.8 (1).\\
+        Therefore we have found $m=-a$ and $n=-b$ such that $m>0$, $n>0$ and $r = \frac{m}{n}$.
+    \end{itemize}
+    \end{proof}
+    \begin{proof}{\textbf{1.5.9}}
+    \begin{itemize}
+        \item [(1)]
+        Let us define $\N = \{\frac{a}{1}~|~a>0\}$.\\
+        We need to find $n>\frac{s}{r}$ where $n\in \N$ and since $\frac{s}{r} \in \Q$
+        is of the form $\frac{a}{b}$ where $a,b \in \Z$ then we need to find
+        $n=\frac{n}{1}>\frac{a}{b}$ but this means because of Lemma 1.5.8 (1) that
+        $nb>1\cdot a = a$ and because Exercise 1.5.8 (2) we know there is $b > 0$ and
+        $a>0$ such that $\frac{a}{b}>0$ then $a,b \in \N$ and therefore $b \geq 1$. So
+        if $b=1$ then we take $n=a+1$ and then $(a+1)b = a+1>a$ which is true, and if
+        $b>1$ then by multiplying both sides by $a$ we have that $ab>a$ so it's enough
+        to select $n=a$.
+        \item [(2)]
+        We need to find $m$ such that $\frac{1}{m}<r$ or $m>    \frac{1}{r}$ if $r>0$ and $r\in \Q$ then we can
+        write $r$ as $r = \frac{a}{b}$ where there is $a>0$ and $b>0$ because of
+        Exercise 1.5.8 (2) and then $a,b \in \N$. It follows then that
+        $\frac{1}{r} = \frac{b}{a}$ so in other words we want to find because of
+        Lemma 1.5.8 (1) some $m$ such that $ma>b$. Since $a \in \N$ then $a \geq 1$. If
+        $a=1$ then by taking $m=b+1$ we are good to go since $m=b+1>b$, and if $a>1$
+        then by multiplying both sides by $b$ we have that $ab>b$ so it's enough
+        to select $m=b$.
+\cleardoublepage
+        \item [(3)]
+        We want to find some $k \in \N$ such that
+        $$\left(r+\frac{1}{k}\right)^2=r^2+2\frac{r}{k}+\frac{1}{k^2}<p$$
+        but since $\frac{1}{k^2}<\frac{1}{k}$ the above inequality is going to be
+        satisfied if the folllowing one is satisfied too
+        $$r^2+2\frac{r}{k}+\frac{1}{k}<p$$
+        then
+        \begin{align*}
+            \frac{2r}{k}+\frac{1}{k} &< p-r^2 \quad \text{by adding to both sides }-r^2\\
+            \frac{2r+1}{k} &< p- r^2 \quad \text{by adding both left terms}\\
+            2r+1 &< (p-r^2)k \quad \text{by multiplying both sides by }k>0\\
+            \frac{2r+1}{p-r^2} &< k \quad \begin{aligned}&\text{by multiplying both sides by }(p-r^2)^{-1}>0\\
+                        &\text{since }p>0 \text{, }r>0\text{ and }r^2<p\end{aligned}
+        \end{align*}
+        Now given that $r,p \in \Q$ we can write them as fractions and because of the
+        Exercise 1.5.8 (2) we know there is $a>0$, $b>0$, $c>0$ and $d>0$ i.e
+        $a,b,c,d \in \N$ such that $r=\frac{a}{b}$ and $p=\frac{c}{d}$. Also, since
+        $p-r^2 \in \Q$ and $p-r^2>0$ we can write it as $p-r^2=\frac{e}{f}$ such that
+        $e,f \in \N$. Then we want to find $k$ such that
+        \begin{align*}
+            \frac{\frac{2a}{b}+1}{\frac{e}{f}} &< k\\
+            \frac{\frac{2a+ b}{b}}{\frac{e}{f}} &< k \\
+            \frac{f(2a+b)}{eb} &< k \\
+            f(2a+b) &< (eb)k \quad \text{because of Lemma 1.5.8 (6)}
+        \end{align*}
+        Since $a,b,e,f \in \N$ and $2 \in \N$ then $eb \in \N$ and $f(2a+b) \in \N$
+        so $eb$ must be $eb \geq 1$. If $eb=1$ then by taking $k = f(2a+b) + 1$ is
+        enough given that $f(2a+b) < f(2a+b) + 1 = k$ and if $eb > 1$ then by
+        multiplying by $f(2a+b)$ both sides we have that $f(2a+b) < (eb)(f(2a+b))$
+        then taking $k = f(2a+b)$ is enough. 
+    \end{itemize}
+    \end{proof}
+\cleardoublepage 
+    \begin{proof}{\textbf{1.6.1}}
+        Let us prove by contradiction that $B-A$ has an infinite amount of elements.\\
+        The set $B-A$ is defined as
+        $B-A = \{b \in B ~|~ b<a \text{ for all }a \in A\}$ and let us suppose that 
+        $B-A = \{b_1, b_2, b_3, ... , b_n\}$
+        where $n \in \N$ let's take $z = min(\{b_1,b_2,b_3,...,b_n\})$ by definition
+        $z \in B$ and $z<a$ and since $B$ is a Dedekin cut then there is some $w \in B$
+        such that $w<z$ and by the Transitive Law we have that $w<a$, but $z$ was the
+        minimum value, therefore this is a contradiction and it follows that $B-A$ has
+        an infinite amount of elements.
+    \end{proof}
+    \begin{proof}{\textbf{1.6.2}}
+    \begin{itemize}
+    \item [(1)] Let us prove that $T$ is a Dedekin cut.
+    \begin{itemize}
+        \item [(a)] Given that $T$ is defined as $T =\{x \in \Q~|~x>0 \text{ and }x^2>2\}$
+        then $0 \notin T$ but $0 \in \Q$ then $T \neq \Q$. From Exercise 1.5.7 part (1)
+        we know that $1<2$ then since $2>0$ we can multiply both sides of the inequality
+        by $2$ therefore $2<2\cdot 2 = 2^2$ and $2 \in \Q$ so we see that $2 \in T$ it
+        follows then that $T \neq \emptyset$.
+        \item [(b)] Let $t \in T$ and $y \in \Q$ and let us suppose that $y > t$. Given
+        that $t>0$ we have that $y>0$ by the Transitivity Law. Let us now multiply the
+        inequality by $t$ so we have that $yt>t^2$ and let us also multiply by $y$ to
+        obtain $y^2>yt$ therefore by the Transitivity Law we have that $2<t^2<y^2$. It
+        follows then that $y \in T$.
+        \item [(c)] Let $t \in T$ then $t>0$ and $t^2>2$ we want to find some $r$ such
+        that $0<r<t$ and $2<r^2<t^2$ so let us take $r = t - \frac{1}{k}$ where
+        $k \in \N$. We want that $t-\frac{1}{k}>0$ then $t > \frac{1}{k}$ and we know
+        such a $k$ exists because of Problem 1.5.9 part (2).\\
+        We also want that $2<(t-\frac{1}{k'})^2$ where $k' \in \N$ might not be equal to
+        $k$ then we want some $k'$ such that  $2 < t^2 - \frac{2t}{k'} +\frac{1}{k'^2}$
+        but this means that finding a $k'$ such that $2 < t^2 - \frac{2t}{k'}$ is also
+        good to go. It follows that 
+        \begin{align*}
+            2 - t^2 &< -\frac{2t}{k'} \\  
+            \frac{2 - t^2}{2t} &< -\frac{1}{k'} \quad \text{because }t >0\\
+            \frac{t^2 - 2}{2t} &> \frac{1}{k'} \quad \text{multiplying by }-1
+        \end{align*}
+        Given that $t \in \Q$ we notice that $\frac{t^2- 2}{2t} \in \Q$ and since
+        $t^2>2$ then $\frac{t^2- 2}{2t} > 0$. It follows then that because of the
+        Problem 1.5.9 part (2) we know that such $k' \in \N$ exist.
+        Therefore if we take $k'' = max(k, k')$ then $t - \frac{1}{k''} >0$ and
+        $2<(t -\frac{1}{k''})^2$ then $t -\frac{1}{k''} \in T$.
+    \end{itemize}
+\cleardoublepage
+    \item [(2)]
+    Let $y \in D_r$ then $y>r$ for some $r \in \Q$, clearly $r>0$ hence $y^2>r^2$ but
+    also $T = D_r$ so $y \in T$ it follows that $y>0$ and $y^2>2$.\\
+    If $y>0$ and $y^2 >2$ then $y \in T$ and so $y \in D_r$ so $y>r$. So we see that
+    $y>r$ implies that $y^2>2$ and $y^2>2$ implies that $y>r$.\\
+    Let us now assume that $r^2>2$ if we take $y=r$ then $r^2=y^2>2$ and from what we 
+    saw this implies that $r=y>r$ which is a contradiction.
+    Now let $r^2<2$ then we know there is some $q \in \Q$ such that $r^2<q^2<2$  but
+    this means that $r<q$ which implies by what we saw that $q^2>2$ which is a
+    contradiction. Therefore must be that $r^2 = 2$. 
+    \end{itemize}
+    \end{proof}
+    \begin{proof}{\textbf{1.6.3}}
+        We want to prove that
+        $$M = \{r \in \Q ~|~ r=ab \text{ for some }a\in A\text{ and }b \in B\}$$
+        is a Dedekin cut, where we suppose that $0 \in \Q -A$ and $0 \in \Q -B$, and
+        $A$ and $B$ are Dedekin cuts.\\
+        So we proceed to prove the three parts of the Dedekin cuts definition.
+        \begin{itemize}
+        \item [(a)] We know that $A \neq \emptyset$ and $A \neq \Q$, also
+        $B \neq \emptyset$ and $B \neq \Q$. Let $x \in A$ and $y \in B$ then $xy \in M$
+        so $M \neq \emptyset$.\\
+        We also know that $0 \notin A$ and $0 \notin B$ then $0\cdot 0 = 0 \notin M$ but
+        $0 \in \Q$ therefore $M \neq \Q$.
+        \item [(b)] Let $t \in M$ and $y \in \Q$, and suppose $y \geq t$, we know that
+        $t=ab$ for some $a \in A$ and $b \in B$. Then we can write $y=\frac{yb}{b}$ and
+        because $y \geq t$ then $\frac{y}{b} \geq a$ so $\frac{y}{b} \in A$ because $A$
+        is a Dedekin cut. Therefore $y=(\frac{y}{b})\cdot b \in M$.
+        \item [(c)] Let $t \in M$ then $t = ab$ for some $a \in A$ and $b \in B$. Given
+        that $0 \in \Q -A$ and $0 \in \Q -B$ then $0 \notin A$ and $0 \notin B$ and
+        therefore $a>0$ and $b>0$. It follows from the definition of the Dedekin cuts
+        that there is some $p<a$ and $q<b$ such that $p \in A$ and $q \in B$ so
+        $pq \in M$ and because $0<p<a$ and $0<q<b$ we have that $pq < ab$. 
+        \end{itemize}
+        Therefore $M$ is a Dedekin cut.
+    \end{proof}
+\cleardoublepage
+    \begin{proof}{\textbf{1.6.4}}
+        \item [(1)] ($\rightarrow$) If $A \subsetneqq D_r = \{x \in \Q ~|~ x>r\}$ then
+        there is some $q \in D_r$ such that $q \notin A$ then $q>r$ and $q \in \Q$ by
+        definition of $D_r$. It follows that $q \in \Q - A$.\\
+        ($\leftarrow$) If $q \in \Q - A$ and $q > r$ then $q \notin A$ but $q \in \Q$ so
+        by definition $q \in D_r$. It follows that $q \in D_r - A$ but this means that
+        $A \subsetneqq D_r$.
+        \item [(2)] Let's prove first that $A \subseteq D_r$ if and only if $r \in \Q -A$.\\
+        ($\rightarrow$) Let $A \subseteq D_r$ as we know $r \notin D_r$ so $r \notin A$
+        but $r \in \Q$ by definition of $D_r$. It follows that $r \in \Q - A$.\\
+        ($\leftarrow$) Let $r \in \Q - A$ then $r \notin A$. Since $A$ is a Dedekin cut
+        then there is no $x \in A$ such that $x<r$. So if $x \in A$ then $x>r$ but then
+        $x \in D_r$ and since $x$ was arbitrary therefore $A \subseteq D_r$.\\
+        Now let us prove that $r \in \Q-A$ if and only if $r<a$ for all $a \in A$.\\
+        ($\rightarrow$) If $r \in \Q - A$ then $r \notin A$ and since $A$ is a Dedekin
+        cut, all $a \in A$ must be $r<a$ otherwise we have a contradiction to the fact
+        that $A$ is a Dedekin cut.
+        ($\leftarrow$) If $r<a$ for all $a \in A$ then by definition $r \notin A$ but
+        $r \in \Q$ by definition so this means that $r \in \Q-A$.
+    \end{proof}
+    \begin{proof}{\textbf{1.7.1}}
+    \begin{itemize}
+        \item [(1)]
+        Let $x \in D_{-r}$ then $x \in \Q$ and $-r<x$ so $-x<r$. We know that 
+        $-D_r = \{x \in \Q ~|~ -x<c\text{ for some }c \in \Q-D_r\}$. Also given that 
+        $\Q-D_r$ is defined as $\Q - D_r = \{y \in \Q ~|~ y<x \text{ for all } x \in D_r\}$
+        and by definition of $D_r$, $r < x$ where $x \in D_r$ we have that
+        $r \in \Q - D_r$ then $x \in -D_r$. Therefore $D_{-r} \subseteq -D_r$.\\
+        Let $x \in -D_{r}$ then $x \in \Q$ and $-x<c$ for some $c \in \Q-D_r$. As we
+        saw $r \in \Q-D_r$ and by definition of $D_r$ we have that $x>r$ so $-x<-r<r$
+        but then $x>-r$ so $x \in D_{-r}$ and therefore $-D_r \subseteq D_{-r}$.\\
+        It follows that $D_{-r} = -D_r$.
+        \item [(2)]
+        Let $r>0$ and $D_{r^{-1}} = \{x \in \Q ~|~ x>\frac{1}{r}\}$ then $[D_r]^{-1}$
+        is defined as
+        $[D_r]^{-1} = \{x \in \Q ~|~ x>0 \text{ and }\frac{1}{x}<c\text{ for some }c \in \Q-D_r\}$
+        % and if $D_r < D_0$ then $[D_r]^{-1}$ is defined as $[D_r]^{-1} = -(-D_r)^{-1}$.\\
+        
+        Let $x \in D_{r^{-1}}$ then from the definition we have that $r > \frac{1}{x}$
+        which is possible since $x>\frac{1}{r}>0$ and we know that
+        $r \in \Q-D_r$ then $x \in [D_r]^{-1}$ which means that $D_{r^{-1}}\subseteq [D_r]^{-1}$.
+        
+        Let $x \in [D_r]^{-1}$ then there is some $c \in \Q - D_r$ such that
+        $\frac{1}{x}<c$ and we know $r \in \Q - D_r$ so if we take $c=r$ then
+        $\frac{1}{x}<r$ so $\frac{1}{r}<x$ it follows then that $x \in D_{r^{-1}}$ which
+        means that $[D_r]^{-1}\subseteq D_{r^{-1}}$.
+        Therefore when $r>0$ we have that $D_{r^{-1}}=[D_r]^{-1}$
 
+        Let now $r<0$ then $D_{r^{-1}} = D_{-(-r)^{-1}}$ and because of part 1 of this
+        Problem we have that $D_{-(-r)^{-1}} = -D_{(-r)^{-1}}$ and now because $-r>0$ we
+        have that $-D_{(-r)^{-1}} = -[D_{-r}]^{-1} = -[-D_r]^{-1} = [D_r]^{-1}$.        
+    \end{itemize}
+    \end{proof}
+\cleardoublepage
+    \begin{proof}{\textbf{1.7.2}}
+        \begin{itemize}
+            \item [(1)] Given that $A > D_0$ and $B > D_0$ then $AB$ is defined as
+            $$AB = \{r \in \Q ~|~ r=ab \text{ for some }a\in A \text{ and }b \in B\}$$
+            given that $a>0$ and $b>0$ then $r=ab>0$ so $AB \subsetneqq D_0$ which by
+            definition means that $AB > D_0$.
+            \item [(2)] Given that $A > D_0$ then $A^{-1}$ is defined as
+            $$A^{-1} = \{r \in \Q ~|~ r>0 and \frac{1}{r}<c \text{ for some }c \in \Q-A\}$$ 
+            then by definition $r>0$ which means that $A^{-1} \subsetneqq D_0$ it follows
+            that $A^{-1} > D_0$.
+        \end{itemize}
+    \end{proof}
+    \begin{proof}{\textbf{1.7.7}}
+        \begin{itemize}
+            \item [(1)] Let $i(r_1) = i(r_2)$ then $D_{r_1} = D_{r_2}$ let
+            $x \in D_{r_1}$ then $x \in D_{r_2}$ so $x>r_1$ and $x>r_2$ then if
+            $r_1>r_2$ if follows that exists a $r_1>\frac{r_1+r_2}{2}>r_2$ but
+            $\frac{r_1+r_2}{2} \in D_{r_2}$ and $\frac{r_1+r_2}{2} \notin D_{r_1}$ but
+            we know that $D_{r_1} = D_{r_2}$ therefore we have a contradiction.
+            With the same type of arguments we can show that $r_2>r_1$ cannot be either.
+            So must be $r_1 = r_2$.
+            \item [(2)] By definition $i(0) = D_0$ and $i(1) = D_1$.
+            \item [(3)]
+            \begin{itemize}
+                \item [(a)] Let $t \in D_{r+s}$ so $t > r+s$. Since $D_{r+s}$ is a
+                Dedekin cut then we know there is $a \in D_{r+s}$ such that $t>a>r+s$
+                then $a-s>r$ so $a-s \in D_{r}$. Also, we can write that
+                $t = (a-s) + (t -a + s)$, and since $t>a$ then $t-a>0$ so $t-a+s>s$
+                which means that $t-a+s \in D_s$. Therefore we see that $t \in D_r + D_s$.  
+
+                Let $t \in D_r + D_s$ then $t = x + y$ where $x \in D_r$ and $y \in D_s$.
+                Then $x>r$ and $y>s$ and by adding both inequalities we have that
+                $x+y>r+s$ which means that $x+y \in D_{r+s}$. It follows that
+                $D_r + D_s \subseteq D_{r+s}$.
+                
+                Therefore must be that  $D_{r+s} = D_r + D_s$ which means that\\
+                $i(r+s) = i(r)+i(s)$.
+                \item [(b)] By definition $i(-r) = D_{-r}$ and from what we proved in
+                Exercise 1.7.1 we have that $D_{-r} = -D_{r} = -i(r)$.
+                
+                Therefore $i(-r) = -i(r)$.
+\cleardoublepage
+                \item [(c)]Let $r>0$ and $s>0$.
+                
+                If $t \in D_{rs}$ then $t > rs$. Since $D_{rs}$ is a Dedekin cut then we
+                know there is $a \in D_{rs}$ such that $t>a>rs$. Also, we can write
+                $t = \frac{a}{s}\cdot\frac{ts}{a}$ and from the inequality we have that 
+                $\frac{a}{s}>r$ so $\frac{a}{s} \in D_{r}$.
+                On the other hand $t>a$ so $\frac{ts}{a}>s$ which means that
+                $\frac{ts}{a} \in D_s$. Therefore $t \in D_rD_s$ so
+                $D_{rs} \subseteq D_rD_s$.
+
+                Let now $t \in D_rD_s$ so $t = xy$ for some $x \in D_r$ and $y \in D_s$.
+                Also, we know that $x >r>0$ and $y>s>0$ then by multiplying the
+                inequalities we have that $t = xy>rs$ it follows that $t \in D_{rs}$ and 
+                that $D_rD_s \subseteq D_{rs}$. Therefore $D_{rs} = D_rD_s$.
+
+                Now let $r>0$ and $s<0$ which means that $D_r \geq D_0$ and $D_s < D_0$.
+                Then 
+                $$D_{rs} = D_{r(-(-s))} = -D_{r(-s)} = -[D_rD_{-s}] = -[D_r(-D_s)] = D_rD_s$$
+                where we used first the Exercise 1.7.1 part (1) then the result we got
+                for the case where $r>0$ and $s>0$ and last the definition of
+                multiplication of Dedekin cuts.
+                
+                In the case of $r<0$ and $s>0$ we have in the same way that 
+                $$D_{rs} = D_{(-(-r))s} = -D_{(-r)s} = -[D_{-r}D_s] = -[(-D_r)D_s] = D_rD_s$$
+                
+                And finally in the case of $r<0$ and $s<0$ we have that 
+                \begin{align*}
+                    D_{rs} &= D_{(-(-r))(-(-s))} = D_{(-r)(-s)} = D_{-r}D_{-s} = [(-D_r)(-D_s)] \\
+                           &= D_rD_s
+                \end{align*}
+
+                Therefore $D_{rs} = i(rs) = i(r)i(s) = D_rD_s$.
+
+                \item [(d)] By definition $i(r^{-1}) = D_{r^{-1}}$ and by what we proved
+                in Exercise 1.7.1 part (2) we have that $D_{r^{-1}} = [D_{r}]^{-1}$.
+
+                Therefore $i(r^{-1}) = D_{r^{-1}} = [D_{r}]^{-1} = [i(r)]^{-1}$.
+
+                \item [(e)] ($\rightarrow$) Let $x \in D_s$ then by definition $s<x$
+                but we know that $r<s<x$ so $x \in D_r$ which
+                means that $D_s \subsetneqq D_r$ then $D_r < D_s$ and $i(r)<i(s)$.
+
+                ($\leftarrow$) If $i(r)<i(s)$ then $D_r < D_s$ and $D_s \subsetneqq D_r$.
+                We will show by contradiction that $r<s$.
+                Suppose that $s<r$ then $r \in D_s$ but then $D_r \subsetneqq D_s$ so 
+                $D_s < D_r$, but we know that $D_r < D_s$ so we have a contradiction.
+                
+                Now suppose that $r=s$ then $D_r = D_s$ but know that $D_r < D_s$ so
+                we have another contradiction.
+
+                Therefore by Trichotomy must be the case that $r<s$.
+            \end{itemize}
+        \end{itemize}
+    \end{proof}
+    
 \end{document}
 
 
